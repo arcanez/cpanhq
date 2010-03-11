@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('cpanhq', 'Create');
+Catalyst::ScriptRunner->run('CPANHQ', 'Create');
 
 1;
 

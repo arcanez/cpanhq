@@ -5,7 +5,7 @@ BEGIN {
 }
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('cpanhq', 'Server');
+Catalyst::ScriptRunner->run('CPANHQ', 'Server');
 
 1;
 

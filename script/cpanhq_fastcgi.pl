@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('cpanhq', 'FastCGI');
+Catalyst::ScriptRunner->run('CPANHQ', 'FastCGI');
 
 1;
 
