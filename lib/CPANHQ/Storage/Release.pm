@@ -184,18 +184,14 @@ sub _get_meta_yml {
 
     my $meta_yml_file = first { m{META\.yml\z}i } @$files;
 
-    if (!defined ($meta_yml_file))
-    {
-        die "Could not find META.yml in archive '$arc_path'";
+    if (! defined $meta_yml_file) {
+        return {};
+    } else {
+        my $meta_yml_full_path = File::Spec->catfile( $to_path, $meta_yml_file );
+
+        my ($yaml) = YAML::XS::LoadFile($meta_yml_full_path);
+        return $yaml;
     }
-
-    my $meta_yml_full_path = File::Spec->catfile(
-        $to_path, $meta_yml_file
-    );
-
-    my ($yaml) = YAML::XS::LoadFile($meta_yml_full_path);
-
-    return $yaml;
 }
 
 =head2 $self->_process_meta_yml()
